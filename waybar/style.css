@@ -1,0 +1,339 @@
+* {
+font-family: "Hermit", "HurmitNerdFont-BoldItalic", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+font-size: 14px;  /* Slightly smaller font size */
+font-weight: 900;
+margin: 0;
+padding: 0;
+transition-property: background-color;
+transition-duration: 0.5s;
+}
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 3px;
+    min-height: 0;
+    margin: 0.2em 0.3em 0.2em 0.3em;
+}
+
+/* The whole bar */
+#waybar {
+background-color: transparent;
+color: #d6d9de;
+transition-property: background-color;
+transition-duration: 0.5s;
+border-radius: 0px;
+margin: 0px 0px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+padding: 3px 5px;  /* Adjusted padding to reduce height */
+margin: 3px 5px;    /* Reduced margin slightly */
+border-radius: 6px;
+color: #d6d9de;
+background-color: #232629;
+transition: all 0.3s ease-in-out;
+font-size: 13px;  /* Slightly smaller font size */
+}
+
+#workspaces button.active {
+color: #d6d9de;
+background: #d75a5a;
+}
+
+#workspaces button:hover {
+background: #2b2f33;
+}
+
+#workspaces button.urgent {
+background-color: #ff6b6b;
+}
+
+#workspaces {
+background-color: #232629;
+border-radius: 14px;
+padding: 3px 6px;  /* Adjusted padding to reduce height */
+}
+
+#window {
+background-color: #232629;
+font-size: 15px;   /* Slightly smaller font size */
+font-weight: 800;
+color: #d6d9de;
+border-radius: 14px;
+padding: 3px 6px;  /* Reduced padding */
+margin: 2px;
+opacity: 1;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#mode,
+#idle_inhibitor,
+#mpd,
+#custom-rofi,
+#bluetooth,
+#custom-waypaper,
+#custom-hyprPicker,
+#custom-power-menu,
+#custom-spotify,
+#custom-weather,
+#custom-mediaplayer,
+#custom-weather.severe,
+#custom-weather.sunnyDay,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-waypaper {
+background-color: #232629;
+border-radius: 14px;
+padding: 6px;
+}
+
+#custom-weather.default {
+background-color: #232629;
+border-radius: 14px;
+padding: 6px;  /* Adjusted padding */
+}
+
+#custom-screenshot_t {
+background-color: #232629;
+border-radius: 14px;
+padding: 6px;
+}
+
+#custom-spotify {
+background-color: #232629;
+border-radius: 14px;
+padding: 3px 12px;
+}
+
+#tray {
+background-color: #232629;
+border-radius: 14px;
+padding: 6px;  /* Adjusted padding */
+}
+
+#cpu {
+color: #f0a760;
+background-color: #232629;
+padding: 6px;
+}
+
+#memory {
+color: #f7d06a;
+background-color: #232629;
+padding: 6px;
+}
+
+#custom-power {
+background-color: #232629;
+border-radius: 14px;
+padding: 6px;
+}
+
+#custom-storage {
+background-color: #232629;
+border-radius: 14px;
+padding: 6px;
+}
+
+#custom-launcher {
+background-color: #2b2f33;
+color: #d75a5a;
+border-radius: 7.5px;
+padding: 3px 6px;  /* Adjusted padding */
+}
+
+#custom-weather.severe {
+color: #ff6b6b;
+}
+
+#custom-weather.sunnyDay {
+color: #f7d06a;
+}
+
+#custom-weather.clearNight {
+color: #d75a5a;
+}
+
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight {
+color: #aab0b6;
+}
+
+#custom-weather.rainyDay,
+#custom-weather.rainyNight {
+color: #e79fa0;
+}
+
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight {
+color: #e9dfe0;
+}
+
+#custom-weather.default {
+color: #d6d9de;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#custom-rofi {
+background-color: #232629;
+color: #d6d9de;
+}
+
+#pulseaudio {
+color: #d75a5a;
+}
+
+#backlight {
+color: #e79fa0;
+}
+
+#clock {
+color: #d6d9de;
+}
+
+#battery {
+color: #aab0b6;
+}
+
+#battery.charging,
+#battery.full,
+#battery.plugged {
+color: #d75a5a;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(35, 38, 41, 0.5);
+        color: #abb2bf;
+    }
+}
+
+#battery.critical:not(.charging) {
+color: #ff6b6b;
+animation-name: blink;
+animation-duration: 0.5s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #1e2127;
+}
+
+#disk {
+background-color: #d75a5a;
+}
+
+#bluetooth {
+color: #d75a5a;
+}
+
+#bluetooth.disconnected {
+color: #ff6b6b;
+}
+
+#network {
+color: #aab0b6;
+}
+
+#network.disconnected {
+color: #ff6b6b;
+}
+
+#custom-mediaplayer {
+background-color: #232629;
+color: #d6d9de;
+min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+background-color: #d75a5a;
+}
+
+#custom-media.custom-vlc {
+background-color: #f0a760;
+}
+
+/* temperature module matched to the rest; font accent is #d75a5a */
+#temperature {
+background-color: #232629;
+color: #d75a5a;
+padding: 6px;
+}
+
+#temperature.critical {
+background-color: #ff6b6b;
+color: #1e2127;
+}
+
+#tray > .passive {
+-gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+-gtk-icon-effect: highlight;
+background-color: #ff6b6b;
+}
+
+#idle_inhibitor {
+background-color: #2b2f33;
+}
+
+#idle_inhibitor.activated {
+background-color: #d6d9de;
+color: #2b2f33;
+}
+
+#language {
+background: #d75a5a;
+color: #1e2127;
+padding: 0 0px;
+margin: 0 5px;
+min-width: 16px;
+}
+
+#keyboard-state {
+background: #e79fa0;
+color: #1e2127;
+padding: 0 0px;
+margin: 0 5px;
+min-width: 16px;
+}
+
+#keyboard-state > label {
+padding: 0 0px;
+}
+
+#keyboard-state > label.locked {
+background: rgba(0, 0, 0, 0.2);
+}
